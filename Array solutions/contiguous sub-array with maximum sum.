@@ -1,0 +1,17 @@
+int maxSubarraySum(int arr[], int n){
+    
+    // Your code here
+    int MEH = 0;
+    int MSF = INT_MIN;
+    for(int i=0;i<n; i++)
+    {
+        MEH = MEH + arr[i];
+        if(MEH < arr[i])
+        {
+            MEH = arr[i];
+        }
+        if(MSF < MEH)
+         MSF = MEH;
+    }
+    return MSF;
+}
