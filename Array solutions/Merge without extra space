@@ -1,3 +1,8 @@
+-> Traverse arr1 form n-1 and arr2 from 0 
+-> if arr1>arr2 then swap 
+-> in arr1 all the element are smaller than arr2 but not in sorted order
+-> sort both the array
+
 
 void merge(int arr1[], int arr2[], int n, int m) 
 { 
