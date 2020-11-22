@@ -1,3 +1,6 @@
+-> In this we are using XOR operation in all the element of arr and natural number
+
+
 int MissingNumber(vector<int>& array, int n) {
     
     int x_a = 0, x_n =0;
