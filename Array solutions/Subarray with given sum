@@ -1,3 +1,9 @@
+-> we will maintain two pointer left and right they both are pointing first element
+-> we will maintaning currsum, initially it would be zero
+-> in currsum we are adding current value of array which will pointed by right pointer till currsum<s if currsum>s then we will updating the currsum with value of array which will pointes by left pointer then we will l++
+
+
+
 #include <iostream>
 using namespace std;
 
