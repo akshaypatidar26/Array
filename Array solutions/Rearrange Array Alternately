@@ -1,0 +1,28 @@
+// store maximum element of array
+// traverse array elements
+// at even index : we have to put maximum element
+// at odd index : we have to put minimum element
+
+// array elements back to it's original form
+void rearrange(long long *arr, int n) 
+{ 
+	
+	// Your code here
+	int max = n-1, min = 0, me = arr[n-1]+1;
+    for(int i = 0; i < n; i++)
+    {
+        if(i%2 == 0)
+        {
+            arr[i] += arr[max]%me*me;
+            max--;
+        }
+        else
+        {
+            arr[i] += arr[min]%me*me;
+            min++;
+        }
+    }
+    for(int i = 0; i < n; i++)
+    arr[i] = arr[i]/me;
+	 
+}
