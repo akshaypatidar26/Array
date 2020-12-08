@@ -1,0 +1,33 @@
+int main() {
+int t;
+cin>>t;
+while(t--)
+{
+    int n;
+    cin>>n;
+    int arr[n],res[n];
+    int index=0;
+   
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+     res[index++]=arr[n-1];
+    int l=arr[n-1];
+    
+    for(int i=n-2;i>=0;i--)
+    {
+        if(arr[i]>=l)
+          {   res[index++]=arr[i];
+              l=arr[i];
+          
+          }
+    }
+    while(index--)
+    {
+        cout<<res[index]<<" ";
+    }
+    cout<<endl;
+}
+	return 0;
+}
