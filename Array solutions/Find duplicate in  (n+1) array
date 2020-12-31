@@ -1,0 +1,48 @@
+M.1 circular LL(slow ptr and fast ptr)
+int findDuplicate(vector<int>& nums) {
+        int slow = 0, fast = 0, finder = 0;
+        
+        while (1)
+        {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+            
+            if (slow == fast)
+                break;
+        }
+        
+        
+        while (1)
+        {
+            finder = nums[finder];
+            slow = nums[slow];
+            
+            if (finder == slow)
+                return finder;
+        }
+    }
+};
+
+M.2  Hash map 
+ 
+ void printRepeating(int arr[], int n)
+{
+    // First check all the values that are
+    // present in an array then go to that
+    // values as indexes and increment by
+    // the size of array
+    for (int i = 0; i < n; i++) 
+    {
+        int index = arr[i] % n;
+        arr[index] += n;
+    }
+ 
+    // Now check which value exists more
+    // than once by dividing with the size
+    // of array
+    for (int i = 0; i < n; i++)
+    {
+        if ((arr[i] / n) >= 2)
+            cout << i << " ";
+    }
+}
