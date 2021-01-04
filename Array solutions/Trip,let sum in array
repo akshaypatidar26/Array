@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool doubleSum(int arr[], int l, int h, int x)
+{
+    while(l < h)
+    {
+        if(arr[l] + arr[h] == x)
+        {
+            return true;
+        }
+        
+        if(arr[l] + arr[h] > x)
+        {
+            h--;
+        }
+        else
+        {
+            l++;
+        }
+    }
+    
+    return false;
+}
+
+bool tripletSumArray(int arr[], int n, int x)
+{
+    sort(arr, arr+n);
+    
+    for(int i = n-1; i >= 2; i--)
+    {
+        if(doubleSum(arr, 0, i-1, x - arr[i]) == true)
+        {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+int main()
+{
+    int T;
+    cin >> T;
+    
+    while(T--)
+    {
+        int N, K;
+        cin >> N >> K;
+        
+        int arr[N];
+        for(int i = 0; i < N; i++)
+        {
+            cin >> arr[i];
+        }
+        
+        cout << tripletSumArray(arr, N, K) << endl;;
+    }
+    return 0;
+}
