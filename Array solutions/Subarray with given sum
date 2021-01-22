@@ -3,6 +3,46 @@
 -> in currsum we are adding current value of array which will pointed by right pointer till currsum<s if currsum>s then we will updating the currsum with value of array which will pointes by left pointer then we will l++
 
 
+M-1)
+
+vector<int> subarraySum(int arr[], int n, int s){
+    
+    // Your code here
+int l=0;
+int r=0;
+int csum=0;
+vector<int> res;
+while(r<=n)
+{
+    if(csum==s)
+    {
+        res.push_back (l+1);
+        res.push_back (r);
+        return res;
+    }
+    
+    if(csum < s)
+    {
+        csum+= arr[r];
+        r++;
+    }
+    else
+    {
+        csum-=arr[l];
+        l++;
+    }
+    
+}
+
+ res.push_back(-1);
+ return res;
+ 
+}
+
+
+
+
+M-2)
 
 #include <iostream>
 using namespace std;
